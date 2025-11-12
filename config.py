@@ -1,13 +1,12 @@
 """
 İZİNSİZ DOKUNMA!!!!!!!!!!
+VERİ SETİNİN İSMİNİ Default_Data yap
 """
 import os
 from pathlib import Path
 
-# Ana dizin
 BASE_DIR = Path(__file__).resolve().parent
 
-# Alt klasörler
 DATA_DIR = BASE_DIR / "data"
 VISUALIZE_DIR = BASE_DIR / "visualize"
 REPORTS_DIR = BASE_DIR / "reports"

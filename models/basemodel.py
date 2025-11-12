@@ -10,10 +10,8 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import numpy as np
 
-# --- VERİ YÜKLEME ---
 df = pd.read_csv(config.PROCESSED_DATA_FILE)
 
-# --- TARGET SINIFI ---
 def severity_score(score):
     if score == 0:
         return 0
@@ -24,7 +22,6 @@ def severity_score(score):
 
 df['SEVERITY_CLASS'] = df['SEVERITY_SCORE'].apply(severity_score)
 
-# --- FEATURE SEÇİMİ ---
 numeric_features = ['LATITUDE', 'LONGITUDE', 'YEAR', 'MONTH', 'DAY_OF_WEEK', 'HOUR']
 categorical_features = ['BOROUGH', 'VEHICLE_TYPE_CODE_1', 'VEHICLE_TYPE_CODE_2',
                         'CONTRIBUTING_FACTOR_VEHICLE_1', 'CONTRIBUTING_FACTOR_VEHICLE_2']
@@ -32,12 +29,10 @@ categorical_features = ['BOROUGH', 'VEHICLE_TYPE_CODE_1', 'VEHICLE_TYPE_CODE_2',
 X = df[numeric_features + categorical_features]
 y = df['SEVERITY_CLASS']
 
-# --- TRAIN/VALIDATION SPLIT ---
 X_train, X_val, y_train, y_val = train_test_split(
     X, y, test_size=config.TEST_SIZE, random_state=config.RANDOM_STATE, stratify=y
 )
 
-# --- PREPROCESS ---
 numeric_transformer = StandardScaler()
 categorical_transformer = OrdinalEncoder(handle_unknown='use_encoded_value', unknown_value=-1)
 
@@ -49,7 +44,6 @@ preprocessor = ColumnTransformer([
 X_train_p = preprocessor.fit_transform(X_train)
 X_val_p = preprocessor.transform(X_val)
 
-# --- XGBoost MODEL ---
 xgb_model = XGBClassifier(
     objective='multi:softprob',
     eval_metric='mlogloss',
@@ -65,7 +59,6 @@ xgb_model = XGBClassifier(
 
 xgb_model.fit(X_train_p, y_train)
 
-# --- TAHMİN VE METRİKLER ---
 y_val_pred = xgb_model.predict(X_val_p)
 
 acc = accuracy_score(y_val, y_val_pred)
@@ -76,7 +69,6 @@ print("Accuracy:", acc)
 print("F1-Score:", f1)
 print("Classification Report:\n", report)
 
-# --- CONFUSION MATRIX ---
 cm = confusion_matrix(y_val, y_val_pred)
 plt.figure(figsize=(6,5))
 sns.heatmap(cm, annot=True, fmt='d', cmap='Blues')
