@@ -22,12 +22,12 @@ Bu depo, projenin farklı aşamalarını temsil eden Jupyter Notebook dosyaları
 ## Dosya Yapısı
 
 | Dosya Adı | İçerik Özeti |
-| `FET445..._VeriAnalizi.ipynb` | Veri setinin detaylı analizi ve temizlik adımları. |
-| `FET445..._EDA.ipynb` | Keşifçi Veri Analizi (Exploratory Data Analysis). |
-| `FET445..._ÖnVeriGörselleştirme.ipynb` | Veri görselleştirme sonuçları. |
-| `FET445..._Encoding.ipynb` | Kategorik değişkenlerin kodlanması (ön işleme). |
-| `FET445..._KNNSonrası.ipynb` | KNN modelinin eğitimi ve sonuçlarının incelenmesi. |
-| Diğer `FET445...ipynb` dosyaları | Farklı model denemeleri veya analiz varyasyonları. |
+* | `FET445..._VeriAnalizi.ipynb` | Veri setinin detaylı analizi ve temizlik adımları. |
+* | `FET445..._EDA.ipynb` | Keşifçi Veri Analizi (Exploratory Data Analysis). |
+* | `FET445..._ÖnVeriGörselleştirme.ipynb` | Veri görselleştirme sonuçları. |
+* | `FET445..._Encoding.ipynb` | Kategorik değişkenlerin kodlanması (ön işleme). |
+* | `FET445..._KNNSonrası.ipynb` | KNN modelinin eğitimi ve sonuçlarının incelenmesi. |
+* | Diğer `FET445...ipynb` dosyaları | Farklı model denemeleri veya analiz varyasyonları. |
 
 ## Gereksinimler
 Bu projeyi yerel ortamınızda çalıştırmak için aşağıdaki Python kütüphanelerine ihtiyacınız vardır:
