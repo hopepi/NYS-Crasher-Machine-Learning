@@ -39,13 +39,13 @@ Bu projeyi yerel ortamınızda çalıştırmak için aşağıdaki Python kütüp
 * Matplotlib / Seaborn
 * Scikit-learn
 
-Proje Ekibi
-| Semih ALTUN |
-| Efe İNGİN |
-| Enes ÇAKIR |
-| Hüseyin BALIK |
-| Muhammed Emir AYDOĞAN |
-| Umut ÖZKAN |
+Proje Ekibi:
+* Semih ALTUN 
+* Efe İNGİN 
+* Enes ÇAKIR 
+* Hüseyin BALIK 
+* Muhammed Emir AYDOĞAN 
+* Umut ÖZKAN 
 
 Bu kütüphaneleri genellikle tek bir komutla yükleyebilirsiniz:
 
